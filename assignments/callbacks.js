@@ -83,11 +83,24 @@ multiplyNums (ccc, ddd, function(theproduct) {
   console.log(theproduct)
 });
 
-
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+
+function contains(item, arr, cb) {
+  return cb(arr.includes(item));
+}
+
+contains('yo-yo', items, function(includesornot) {
+  console.log(includesornot) 
+});
+
+contains(999, items, function(includesornot) {
+  console.log(includesornot) 
+});
+
 
 /* STRETCH PROBLEM */
 
