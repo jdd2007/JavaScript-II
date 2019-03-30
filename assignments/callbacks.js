@@ -1,5 +1,7 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
+console.log('---start callbacks---')
+
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
@@ -83,10 +85,9 @@ multiplyNums (ccc, ddd, function(theproduct) {
   console.log(theproduct)
 });
 
-function contains(item, list, cb) {
+// function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+  // Pass true to the callback if it is, otherwise pass false.}
 
 
 function contains(item, arr, cb) {
@@ -101,6 +102,7 @@ contains(999, items, function(includesornot) {
   console.log(includesornot) 
 });
 
+console.log('---end callbacks---')
 
 /* STRETCH PROBLEM */
 
