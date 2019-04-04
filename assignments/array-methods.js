@@ -109,7 +109,7 @@ console.log(firstNamesWithMap)
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 
-const largeShirts = runners.filter(runner => { return runner["shirt_size"] == "L"});
+const largeShirts = runners.filter(runner => (runner["shirt_size"] === "L"));
 
 console.log('Below is the array-methods Challenge 3')
 console.log(largeShirts)
@@ -122,7 +122,7 @@ let donationsList = []
 
 runners.forEach(function(item){
     let donation = item["donation"];
-    donationsList.push(donation);
+    donationsList.push(item["donation"]);
 });
 
 console.log('Below is a list of donations array from array-methods Challenge 4')
@@ -136,8 +136,39 @@ console.log(totalDonationAmount)
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1: Elon Musk loves what we are doing, and decides to donate 88 dollars for each 1 dollar donated. Return an array named with 
+// Problem 1: Elon Musk loves what we are doing, and decides to donate 69 dollars for each 1 dollar donated. Find how much Elon owes for each individual donation. 
 
-// Problem 2
 
-// Problem 3
+let dollarsFromE = [];
+
+runners.forEach(function(item){
+    let elonAmount = (item["donation"]*69)
+    dollarsFromE.push(elonAmount);
+});
+
+const elonTotal = dollarsFromE.reduce((total, initial) => total + initial)
+
+console.log('---Below is array-methods Challenge 5, Problem 1---');
+console.log(dollarsFromE);
+console.log(elonTotal);
+
+
+// Problem 2: We want a new array with each item simply stating the first name of each person who donated and the amount Elon will contribute to match that person's donation. 
+
+
+let firstAndMatch = [];
+
+runners.forEach(function(item){
+    let arrayItem = item["first_name"]+" "+(item["donation"]*69); 
+    firstAndMatch.push(arrayItem);
+});
+
+console.log('---Below is array-methods Challenge 5, Problem 2---');
+console.log(firstAndMatch)
+
+// Problem 3: Different levels of donations require different levels of thank you email. Return an array of the people who donated above $200, so we can give them the credit they deserve. 
+
+const donorsOver200 = runners.filter(runner => (runner["donation"] > 200));
+
+console.log('---Below is array-methods Challenge 5, Problem 3---');
+console.log(donorsOver200)
