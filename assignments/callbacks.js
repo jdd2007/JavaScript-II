@@ -1,5 +1,7 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
+console.log('---start callbacks---')
+
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
@@ -13,6 +15,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // Potential Solution:
 
   // Higher order function using "cb" as the call back
+  */
+  
   function firstItem(arr, cb) {
     return cb(arr[0]);
   }
@@ -22,29 +26,83 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     console.log(first)
   });
 
+
+/*
+function getLength(arr, cb) {
+   getLength passes the length of the array into the callback.
+} 
 */
 
-
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function(thelength) {
+  console.log(thelength)
+});
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
 
+function last(arr, cb) {
+  return cb(arr[arr.length-1]);
+}
+
+// Function invocation 
+last(items, function(lastitem) {
+  console.log(lastitem)
+});
+
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+function sumNums(x, y, cb) {
+  return cb(x+y);
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+let aaa = 111
+let bbb = 222
+
+sumNums (aaa, bbb, function(sumAnswer) {
+  console.log(sumAnswer)
+});
+
+// function multiplyNums(x, y, cb) {
+  // multiplyNums multiplies two numbers and passes the result to the callback. }
+
+function multiplyNums(x, y, cb) {
+  return cb(x*y);
 }
+
+let ccc = 5
+let ddd = 7
+
+multiplyNums (ccc, ddd, function(theproduct) {
+  console.log(theproduct)
+});
+
+// function contains(item, list, cb) {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.}
+
+
+function contains(item, arr, cb) {
+  return cb(arr.includes(item));
+}
+
+contains('yo-yo', items, function(includesornot) {
+  console.log(includesornot) 
+});
+
+contains(999, items, function(includesornot) {
+  console.log(includesornot) 
+});
+
+console.log('---end callbacks---')
 
 /* STRETCH PROBLEM */
 

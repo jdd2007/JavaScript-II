@@ -2,6 +2,27 @@
 // Write a simple closure of your own creation.  Keep it simple!
 
 
+console.log('Closure Challenge 1 below:')
+function hungrymouse() {
+  const mouse1 = 'he is gonna ask for a glass of milk'
+  console.log('If you give a mouse a cookie, ' + mouse1)
+  function thirsty () {
+    const mouse2 = 'he is gonna ask for a straw'
+    console.log('And if ' + mouse1 + ' then ' + mouse2)
+    function drinky () {
+      const mouse3 = 'he will then feel entitled to ask for a lot of other stuff too'
+      console.log('So, moral of the story is if ' + mouse2 + ', ' + mouse3)
+    }
+    drinky ()
+  }
+  thirsty ()
+}
+
+hungrymouse ();
+
+
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
